@@ -3,36 +3,37 @@ import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import { AppContext } from "./controllers/AppContext";
+// import { AppContext } from "./controllers/AppContext";
 import Login from './views/Auth/Login';
+import RolePage from "./views/Signup/RolePage";
 
 function App() {
 
-	const [ store, setStore ] = useState( {
-		email: '',
-		password: ''
-	} );
+	// const [ store, setStore ] = useState( {
+	// 	email: '',
+	// 	password: ''
+	// } );
 
-	useEffect( () => {
-		const email    = '';
-		const password = '';
+	// useEffect( () => {
+	// 	const email    = '';
+	// 	const password = '';
 
-		setStore( { ...store, email, password } );
+	// 	setStore( { ...store, email, password } );
 
-	}, [] );
+	// }, [] );
 
   return (
     <div className="App">
 
-      <AppContext.Provider value={ [ store, setStore ] }>
+      {/* <AppContext.Provider value={ [ store, setStore ] }> */}
 
         <Router>
 
           <Routes>
             {/* Guest routes */}
             <Route path="/" exact={true} element={<Login />} />
-            {/* <Route path="/about" element={<About />} />
-            <Route path="/chatbot" element={<ChatBot />} /> */}
+            <Route path="/signup/role" element={<RolePage />} />
+            {/* <Route path="/chatbot" element={<ChatBot />} /> */}
             {/* <Route path='*' element={<NotFound />} /> */}
             {/* Guest routes, Not logged in */}
             
@@ -40,7 +41,7 @@ function App() {
           </Routes>
 
         </Router>
-      </AppContext.Provider>
+      {/* </AppContext.Provider> */}
 
     </div>
   );

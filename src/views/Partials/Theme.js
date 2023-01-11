@@ -6,7 +6,7 @@ const Header = () => {
             <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">
                     <div style={{ borderRadius: '50%', height: '100px', width: '100px', height: '100px'}}>
-                        <img src="images/Placeholder Circle.png" width={'100%'} height={'100%'} />
+                        <img src="/images/Placeholder Circle.png" width={'100%'} height={'100%'} />
                     </div>
                     <div style={{fontFamily: 'Poppins', fontSize: '26px', marginLeft: '32px'}}>LOGO</div>
 
