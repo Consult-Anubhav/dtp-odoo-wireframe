@@ -49,10 +49,16 @@ function App() {
             <Route path="/signup/requestsent" element={<ApprovalRequest />} />
 
             <Route path="/signup/supplier" element={<BasicDetailsPage dataurl={"/testData/countries.json"} type="3" />} />
-            <Route path="/signup/supplier/company/certificates" element={<CertificationDetailsPage dataurl={"/testData/certificatedetails.json"} type="1" />} />
-            <Route path="/signup/supplier/company" element={<CompanyDetailsPage dataurl={"/testData/companydetails.json"} type="1" />} exact={true} />
-            <Route path="/signup/supplier/company/address" element={<CompanyAddressDetailsPage />} />
-            <Route path="/signup/supplier/company/contact" element={<CompanyContactDetailsPage />} />
+            <Route path="/signup/supplier/company/certificates" element={<CertificationDetailsPage dataurl={"/testData/certificatedetails.json"} type="3" />} />
+            <Route path="/signup/supplier/company" element={<CompanyDetailsPage dataurl={"/testData/companydetails.json"} type="3" />} exact={true} />
+            <Route path="/signup/supplier/company/address" element={<CompanyAddressDetailsPage type="3" />} />
+            <Route path="/signup/supplier/company/contact" element={<CompanyContactDetailsPage type="3" />} />
+
+            <Route path="/signup/logistics" element={<BasicDetailsPage dataurl={"/testData/countries.json"} type="4" />} />
+            <Route path="/signup/logistics/company/certificates" element={<CertificationDetailsPage dataurl={"/testData/certificatedetails.json"} type="4" />} />
+            <Route path="/signup/logistics/company" element={<CompanyDetailsPage dataurl={"/testData/companydetails.json"} type="4" />} exact={true} />
+            <Route path="/signup/logistics/company/address" element={<CompanyAddressDetailsPage type="4" />} />
+            <Route path="/signup/logistics/company/contact" element={<CompanyContactDetailsPage type="4" />} />
 
             <Route path="/signup/logistics" element={<Login />} />
             {/* <Route path="/chatbot" element={<ChatBot />} /> */}

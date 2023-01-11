@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const CompanyDetailsPage = ({dataurl, type = 1}) => {
+const CompanyDetailsPage = ({dataurl, type}) => {
 
     const [companyTypes, setCompanyTypes] = useState(['']);
     const [domainTypes, setDomainTypes] = useState(['']);
@@ -25,12 +25,12 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
 
     function OpenDivLink()
     {
-        if (type == "1")
-            navigate('/signup/supplier/company/address'); //Buyer Individual Details
-        else if (type == "2")
-            navigate('submitted'); //Buyer Company Details
+        if (type == "3")
+            navigate('/signup/supplier/company/address'); //Seller
+        else if (type == "4")
+            navigate('/signup/logistics/company/address'); //Logistics
         else
-            navigate('submitted'); //Seller and Logistics Certificates
+            navigate('submitted'); //
     }
 
     return (
@@ -53,100 +53,85 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="row mb-3 mx-auto" style={{maxWidth: '600px'}}>
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company Type</label>
-                                                    <div class="col-sm-8">
-                                                        <select className="form-select" defaultValue="" 
-                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Company Type</option>
-                                                            
-                                                            {companyTypes && companyTypes.length > 0 && companyTypes.map
-                                                                (i => 
-                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
-                                                                )
-                                                            }
-                                                        </select>
-                                                    </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Company Type</label>
+                                                <div class="col-sm-8">
+                                                    <select className="form-select" defaultValue="" 
+                                                        style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
+                                                        <option value="">Company Type</option>
+                                                        
+                                                        {companyTypes && companyTypes.length > 0 && companyTypes.map
+                                                            (i => 
+                                                                (<option key={i.value} value={i.value}>{i.label}</option>)
+                                                            )
+                                                        }
+                                                    </select>
                                                 </div>
                                             </div>
-                                        }
-                                        
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Domain Type</label>
-                                                    <div class="col-sm-8">
-                                                        <select className="form-select" defaultValue="" 
-                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Domain Type</option>
-                                                            
-                                                            {domainTypes && domainTypes.length > 0 && domainTypes.map
-                                                                (i => 
-                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
-                                                                )
-                                                            }
-                                                        </select>
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Domain Type</label>
+                                                <div class="col-sm-8">
+                                                    <select className="form-select" defaultValue="" 
+                                                        style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
+                                                        <option value="">Domain Type</option>
+                                                        
+                                                        {domainTypes && domainTypes.length > 0 && domainTypes.map
+                                                            (i => 
+                                                                (<option key={i.value} value={i.value}>{i.label}</option>)
+                                                            )
+                                                        }
+                                                    </select>
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Date of Registration</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Date of Registration</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Revenue</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Revenue</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Employee Strength</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Employee Strength</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tax ID</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Tax ID</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company Website</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Company Website</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="w-100 mx-auto text-center my-5" onClick={() => OpenDivLink()}

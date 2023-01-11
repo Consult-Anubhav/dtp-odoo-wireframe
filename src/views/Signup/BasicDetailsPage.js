@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const BasicDetailsPage = ({dataurl, type = 1}) => {
+const BasicDetailsPage = ({dataurl, type}) => {
 
     const [countryItems, setCountryItems] = useState(['']);
 
@@ -27,8 +27,10 @@ const BasicDetailsPage = ({dataurl, type = 1}) => {
             navigate('/signup/submitted'); //Buyer Individual Details
         else if (type == "2")
             navigate('/signup/submitted'); //Buyer Company Details
+        else if (type == "4")
+            navigate('/signup/logistics/company/certificates'); //Logistics Certificates
         else
-            navigate('company/certificates'); //Seller and Logistics Certificates
+            navigate('/signup/supplier/company/certificates'); //Seller Certificates
     }
 
     return (

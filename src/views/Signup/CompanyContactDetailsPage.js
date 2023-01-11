@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const CompanyContactDetailsPage = () => {
+const CompanyContactDetailsPage = ( type) => {
 
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const CompanyContactDetailsPage = () => {
                     <div className="col-12">
                         <div className="d-flex justify-content-center align-items-center h-100 w-100">
                             <div className="text-center w-100 py-5" style={{fontSize: '32px'}}>
-                                Company Address Details
+                                Company Contact Details
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const CertificationDetailsPage = ({dataurl, type = 1}) => {
+const CertificationDetailsPage = ({dataurl, type = "1"}) => {
 
     const [certificateTypes, setCertificateTypes] = useState(['']);
     const [identificationTypes, setIdentificationTypes] = useState(['']);
@@ -26,11 +26,11 @@ const CertificationDetailsPage = ({dataurl, type = 1}) => {
     function OpenDivLink()
     {
         if (type == "1")
-            navigate('/signup/supplier/company'); //Buyer Individual Details
-        else if (type == "2")
-            navigate('submitted'); //Buyer Company Details
+            navigate('/signup/supplier/company'); //Seller
+        else if (type == "4")
+            navigate('/signup/logistics/company'); //Logistics
         else
-            navigate('submitted'); //Seller and Logistics
+            navigate('submitted'); //
     }
 
     return (
@@ -53,99 +53,85 @@ const CertificationDetailsPage = ({dataurl, type = 1}) => {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="row mb-3">
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Certificate Type</label>
-                                                    <div class="col-sm-8">
-                                                        <select className="form-select" defaultValue="" 
-                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Certificate Type</option>
-                                                            
-                                                            {certificateTypes && certificateTypes.length > 0 && certificateTypes.map
-                                                                (i => 
-                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
-                                                                )
-                                                            }
-                                                        </select>
-                                                    </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Certificate Type</label>
+                                                <div class="col-sm-8">
+                                                    <select className="form-select" defaultValue="" 
+                                                        style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
+                                                        <option value="">Certificate Type</option>
+                                                        
+                                                        {certificateTypes && certificateTypes.length > 0 && certificateTypes.map
+                                                            (i => 
+                                                                (<option key={i.value} value={i.value}>{i.label}</option>)
+                                                            )
+                                                        }
+                                                    </select>
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Upload Certificate</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Upload Certificate</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Identification Type</label>
-                                                    <div class="col-sm-8">
-                                                        <select className="form-select" defaultValue="" 
-                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Identification Type</option>
-                                                            
-                                                            {identificationTypes && identificationTypes.length > 0 && identificationTypes.map
-                                                                (i => 
-                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
-                                                                )
-                                                            }
-                                                        </select>
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Identification Type</label>
+                                                <div class="col-sm-8">
+                                                    <select className="form-select" defaultValue="" 
+                                                        style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
+                                                        <option value="">Identification Type</option>
+                                                        
+                                                        {identificationTypes && identificationTypes.length > 0 && identificationTypes.map
+                                                            (i => 
+                                                                (<option key={i.value} value={i.value}>{i.label}</option>)
+                                                            )
+                                                        }
+                                                    </select>
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Upload Identification</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Upload Identification</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company CIN Number</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Company CIN Number</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Trademark Certificate</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Trademark Certificate</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
-                                        {type == "1" &&
-                                            <div className="col-6">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Business PAN</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
-                                                        style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
-                                                    </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div class="form-group row py-2">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Business PAN</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
+                                                    style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
                                                 </div>
                                             </div>
-                                        }
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="w-100 mx-auto text-center my-5" onClick={() => OpenDivLink()}

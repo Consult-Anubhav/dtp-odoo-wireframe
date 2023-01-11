@@ -3,13 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const CompanyAddressDetailsPage = () => {
+const CompanyAddressDetailsPage = ({ type}) => {
 
     const navigate = useNavigate();
 
     function OpenDivLink()
     {
-        navigate('/signup/supplier/company/contact'); //Seller and Logistics 
+        if (type == "3")
+            navigate('/signup/supplier/company/contact'); //Seller
+        else if (type == "4")
+            navigate('/signup/logistics/company/contact'); //Logistics
+        else
+            navigate('submitted'); //
     }
 
     return (
