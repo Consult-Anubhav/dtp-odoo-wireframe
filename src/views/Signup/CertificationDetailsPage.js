@@ -25,7 +25,7 @@ const CertificationDetailsPage = ({dataurl, type = "1"}) => {
 
     function OpenDivLink()
     {
-        if (type == "1")
+        if (type == "3")
             navigate('/signup/supplier/company'); //Seller
         else if (type == "4")
             navigate('/signup/logistics/company'); //Logistics
