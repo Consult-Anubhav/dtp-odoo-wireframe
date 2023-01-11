@@ -1,16 +1,47 @@
-
+import React, { useState, useEffect } from "react";
 import './App.css';
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+import { AppContext } from "./controllers/AppContext";
+import Login from './views/Auth/Login';
+
 function App() {
+
+	const [ store, setStore ] = useState( {
+		email: '',
+		password: ''
+	} );
+
+	useEffect( () => {
+		const email    = '';
+		const password = '';
+
+		setStore( { ...store, email, password } );
+
+	}, [] );
+
   return (
     <div className="App">
-      <header style={{height: '240px'}}>
-      </header>
-      <div style={{minHeight: 'calc(100vh - 480px)', backgroundColor: '#EEEEEE'}}>
 
-      </div>
-      <footer style={{height: '240px'}}>
-      </footer>
+      <AppContext.Provider value={ [ store, setStore ] }>
+
+        <Router>
+
+          <Routes>
+            {/* Guest routes */}
+            <Route path="/" exact={true} element={<Login />} />
+            {/* <Route path="/about" element={<About />} />
+            <Route path="/chatbot" element={<ChatBot />} /> */}
+            {/* <Route path='*' element={<NotFound />} /> */}
+            {/* Guest routes, Not logged in */}
+            
+            {/* Private routes */}
+          </Routes>
+
+        </Router>
+      </AppContext.Provider>
+
     </div>
   );
 }
