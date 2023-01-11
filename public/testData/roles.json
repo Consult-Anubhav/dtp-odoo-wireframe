@@ -1,0 +1,19 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "label": "Buyer",
+        "value": "buyer"
+      },
+      {
+        "id": 2,
+        "label": "Supplier",
+        "value": "supplier"
+      },
+      {
+        "id": 3,
+        "label": "Logistics",
+        "value": "logistics"
+      }
+    ]
+  }

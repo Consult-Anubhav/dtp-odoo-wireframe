@@ -1,8 +1,6 @@
 
-html *
+div.active img
 {
-    /* font-size: 1em !important;
-    color: #000 !important; */
-    font-family: Poppins;
-    font-style: normal;
+    border-radius: 8px;;
+    border: 1px solid rgb(39, 39, 252);
 }

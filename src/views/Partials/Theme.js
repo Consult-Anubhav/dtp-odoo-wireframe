@@ -1,18 +1,22 @@
 import React from "react";
 
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
     return (
         <header className="container" style={{padding: '45px'}}>
             <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">
-                    <div style={{ borderRadius: '50%', height: '100px', width: '100px', height: '100px'}}>
-                        <img src="/images/Placeholder Circle.png" width={'100%'} height={'100%'} />
-                    </div>
-                    <div style={{fontFamily: 'Poppins', fontSize: '26px', marginLeft: '32px'}}>LOGO</div>
+                    <NavLink to="/" className="text-black">
+                        <div className="d-inline-block" style={{ borderRadius: '50%', width: '100px', height: '100px'}}>
+                            <img src="/images/Placeholder Circle.png" width={'100%'} height={'100%'} alt="logo"/>
+                        </div>
+                        <div className="d-inline-block" style={{fontFamily: 'Poppins', fontSize: '26px', marginLeft: '32px'}}>LOGO</div>
+                    </NavLink>
 
                     <div style={{ marginLeft: '80px', width: '240px'}}>
-                        <select class="form-select" aria-label="Default select example" style={{border: '1px solid #AFB1B6'}}>
-                            <option selected>Language</option>
+                        <select className="form-select" defaultValue="" style={{border: '1px solid #AFB1B6'}}>
+                            <option value="">Language</option>
                         </select>
                     </div>
                 </div>

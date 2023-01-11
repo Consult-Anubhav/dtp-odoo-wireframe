@@ -26,21 +26,19 @@ const Login = () => {
                     <div className="col-5">
                         <div className="d-flex justify-content-center align-items-center h-100">
                             <div className="p-4" style={{backgroundColor: 'white'}}>
-                                <div class="mb-3">
-                                    <label class="form-label" style={{color: '#AFB1B6', fontSize: '14px'}}>Email</label>
-                                    <input type="email" class="form-control" id="formEmail" />
+                                <div className="mb-3">
+                                    <label className="form-label" style={{color: '#AFB1B6', fontSize: '14px'}}>Email</label>
+                                    <input type="email" className="form-control" id="formEmail" />
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label" style={{color: '#AFB1B6', fontSize: '14px'}}>Password</label>
-                                    <input type="password" class="form-control" id="formPassword" />
+                                <div className="mb-3">
+                                    <label className="form-label" style={{color: '#AFB1B6', fontSize: '14px'}}>Password</label>
+                                    <input type="password" className="form-control" id="formPassword" />
                                 </div>
-                                <button type="button" class="btn btn-light" style={{fontSize: '14px'}}>Sign In</button>
+                                <button type="button" className="btn btn-light" style={{fontSize: '14px'}}>Sign In</button>
                                 <span style={{border: '1px solid #AFB1B6', margin: '0 10px'}}></span>
-                                <button type="button" class="btn btn-light" style={{fontSize: '14px'}}>
-                                    <NavLink to="/signup/role" className="text-decoration-none text-black">
-                                        Create Account
-                                    </NavLink>
-                                </button>
+                                <NavLink to="/signup">
+                                    <button type="button" className="btn btn-light" style={{fontSize: '14px'}}>Create Account</button>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

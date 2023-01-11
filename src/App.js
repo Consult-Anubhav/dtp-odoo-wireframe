@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 // import { AppContext } from "./controllers/AppContext";
 import Login from './views/Auth/Login';
 import RolePage from "./views/Signup/RolePage";
+import SubRolePage from "./views/Signup/SubRolePage";
 
 function App() {
 
@@ -32,7 +33,10 @@ function App() {
           <Routes>
             {/* Guest routes */}
             <Route path="/" exact={true} element={<Login />} />
-            <Route path="/signup/role" element={<RolePage />} />
+            <Route path="/signup" element={<RolePage dataurl={"/testData/roles.json"}/>} />
+            <Route path="/signup/buyer" element={<SubRolePage dataurl={"/testData/subroles.json"}/>} exact={true} />
+            <Route path="/signup/supplier" element={<Login />} />
+            <Route path="/signup/logistics" element={<Login />} />
             {/* <Route path="/chatbot" element={<ChatBot />} /> */}
             {/* <Route path='*' element={<NotFound />} /> */}
             {/* Guest routes, Not logged in */}
