@@ -23,7 +23,12 @@ const BasicDetailsPage = ({dataurl, type = 1}) => {
 
     function OpenDivLink()
     {
-        navigate('submitted');
+        if (type == "1")
+            navigate('/signup/submitted'); //Buyer Individual Details
+        else if (type == "2")
+            navigate('/signup/submitted'); //Buyer Company Details
+        else
+            navigate('company/certificates'); //Seller and Logistics Certificates
     }
 
     return (

@@ -1,0 +1,16 @@
+{
+    "company_types": [
+      {
+        "id": 1,
+        "label": "Type 1",
+        "value": "type1"
+      }
+    ],
+    "domain_types": [
+      {
+        "id": 1,
+        "label": "Domain 1",
+        "value": "domain1"
+      }
+    ]
+  }

@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import Header, { Footer } from '../Partials/Theme';
 
-const CompanyDetailsPage = ({dataurl, type = 1}) => {
+const CertificationDetailsPage = ({dataurl, type = 1}) => {
 
-    const [companyTypes, setCompanyTypes] = useState(['']);
-    const [domainTypes, setDomainTypes] = useState(['']);
+    const [certificateTypes, setCertificateTypes] = useState(['']);
+    const [identificationTypes, setIdentificationTypes] = useState(['']);
 
     const navigate = useNavigate();
 
@@ -18,19 +18,19 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
         fetch(dataurl)
           .then(res => res.json())
           .then(data => {
-            setCompanyTypes(data.company_types)
-            setDomainTypes(data.domain_types);
+            setCertificateTypes(data.certificate_types)
+            setIdentificationTypes(data.identification_types);
         })
     }
 
     function OpenDivLink()
     {
         if (type == "1")
-            navigate('/signup/supplier/company/address'); //Buyer Individual Details
+            navigate('/signup/supplier/company'); //Buyer Individual Details
         else if (type == "2")
             navigate('submitted'); //Buyer Company Details
         else
-            navigate('submitted'); //Seller and Logistics Certificates
+            navigate('submitted'); //Seller and Logistics
     }
 
     return (
@@ -44,7 +44,7 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                     <div className="col-12">
                         <div className="d-flex justify-content-center align-items-center h-100 w-100">
                             <div className="text-center w-100 py-5" style={{fontSize: '32px'}}>
-                                Company Details
+                                Certification Details
                             </div>
                         </div>
                     </div>
@@ -52,37 +52,17 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                         <div className="d-flex justify-content-center h-100 w-100">
                             <div className="row">
                                 <div className="col-12">
-                                    <div className="row mb-3 mx-auto" style={{maxWidth: '600px'}}>
+                                    <div className="row mb-3">
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company Type</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Certificate Type</label>
                                                     <div class="col-sm-8">
                                                         <select className="form-select" defaultValue="" 
                                                             style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Company Type</option>
+                                                            <option value="">Certificate Type</option>
                                                             
-                                                            {companyTypes && companyTypes.length > 0 && companyTypes.map
-                                                                (i => 
-                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
-                                                                )
-                                                            }
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
-                                        
-                                        {type == "1" &&
-                                            <div className="col-12">
-                                                <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Domain Type</label>
-                                                    <div class="col-sm-8">
-                                                        <select className="form-select" defaultValue="" 
-                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
-                                                            <option value="">Domain Type</option>
-                                                            
-                                                            {domainTypes && domainTypes.length > 0 && domainTypes.map
+                                                            {certificateTypes && certificateTypes.length > 0 && certificateTypes.map
                                                                 (i => 
                                                                     (<option key={i.value} value={i.value}>{i.label}</option>)
                                                                 )
@@ -93,9 +73,9 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                                             </div>
                                         }
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Date of Registration</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Upload Certificate</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
                                                         style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
@@ -104,9 +84,28 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                                             </div>
                                         }
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Revenue</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Identification Type</label>
+                                                    <div class="col-sm-8">
+                                                        <select className="form-select" defaultValue="" 
+                                                            style={{ border: '1px solid #AFB1B6', marginLeft: '10px', backgroundColor: 'inherit'}}>
+                                                            <option value="">Identification Type</option>
+                                                            
+                                                            {identificationTypes && identificationTypes.length > 0 && identificationTypes.map
+                                                                (i => 
+                                                                    (<option key={i.value} value={i.value}>{i.label}</option>)
+                                                                )
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        {type == "1" &&
+                                            <div className="col-6">
+                                                <div class="form-group row py-2">
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Upload Identification</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
                                                         style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
@@ -115,9 +114,9 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                                             </div>
                                         }
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Employee Strength</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company CIN Number</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
                                                         style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
@@ -126,9 +125,9 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                                             </div>
                                         }
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tax ID</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Trademark Certificate</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
                                                         style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
@@ -137,9 +136,9 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
                                             </div>
                                         }
                                         {type == "1" &&
-                                            <div className="col-12">
+                                            <div className="col-6">
                                                 <div class="form-group row py-2">
-                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Company Website</label>
+                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Business PAN</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="staticEmail" placeholder="Abc Abc" 
                                                         style={{ border: '1px solid #AFB1B6',marginLeft: '10px', backgroundColor: 'inherit'}} />
@@ -166,4 +165,4 @@ const CompanyDetailsPage = ({dataurl, type = 1}) => {
     );
 }
 
-export default CompanyDetailsPage;
+export default CertificationDetailsPage;

@@ -9,6 +9,11 @@ import RolePage from "./views/Signup/RolePage";
 import SubRolePage from "./views/Signup/SubRolePage";
 import BasicDetailsPage from "./views/Signup/BasicDetailsPage";
 import Succesful from "./views/Signup/Succesful";
+import CertificationDetailsPage from "./views/Signup/CertificationDetailsPage";
+import CompanyDetailsPage from "./views/Signup/CompanyDetailsPage";
+import CompanyAddressDetailsPage from "./views/Signup/CompanyAddressDetailsPage";
+import CompanyContactDetailsPage from "./views/Signup/CompanyContactDetailsPage";
+import ApprovalRequest from "./views/Signup/ApprovalRequest";
 
 function App() {
 
@@ -39,9 +44,15 @@ function App() {
 
             <Route path="/signup/buyer" element={<SubRolePage dataurl={"/testData/subroles.json"} />} exact={true} />
             <Route path="/signup/buyer/individual" element={<BasicDetailsPage dataurl={"/testData/countries.json"} type="1" />} exact={true} />
-            <Route path="/signup/buyer/individual/submitted" element={<Succesful />} />
+
+            <Route path="/signup/submitted" element={<Succesful />} />
+            <Route path="/signup/requestsent" element={<ApprovalRequest />} />
 
             <Route path="/signup/supplier" element={<BasicDetailsPage dataurl={"/testData/countries.json"} type="3" />} />
+            <Route path="/signup/supplier/company/certificates" element={<CertificationDetailsPage dataurl={"/testData/certificatedetails.json"} type="1" />} />
+            <Route path="/signup/supplier/company" element={<CompanyDetailsPage dataurl={"/testData/companydetails.json"} type="1" />} exact={true} />
+            <Route path="/signup/supplier/company/address" element={<CompanyAddressDetailsPage />} />
+            <Route path="/signup/supplier/company/contact" element={<CompanyContactDetailsPage />} />
 
             <Route path="/signup/logistics" element={<Login />} />
             {/* <Route path="/chatbot" element={<ChatBot />} /> */}

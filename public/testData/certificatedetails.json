@@ -1,0 +1,16 @@
+{
+    "certificate_types": [
+      {
+        "id": 1,
+        "label": "Certificate 1",
+        "value": "certificate1"
+      }
+    ],
+    "identification_types": [
+      {
+        "id": 1,
+        "label": "Identification 1",
+        "value": "identification1"
+      }
+    ]
+  }
