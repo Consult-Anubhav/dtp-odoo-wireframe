@@ -7,6 +7,7 @@ const RolePage = ({ dataurl }) => {
 
     const [linkItems, setLinkItems] = useState(['']);
     const [divLink, setDivLink] = useState(['']);
+
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -36,7 +37,7 @@ const RolePage = ({ dataurl }) => {
                 <div className="row" style={{minHeight: 'calc(100vh - 380px)'}}>
                     <div className="col-12">
                         <div className="d-flex justify-content-center align-items-center h-100 w-100">
-                            <div className="text-center w-100 py-3" style={{fontSize: '32px'}}>
+                            <div className="text-center w-100 py-5" style={{fontSize: '32px'}}>
                                 What will be your role<br />on the platform?
                             </div>
                         </div>
@@ -63,8 +64,8 @@ const RolePage = ({ dataurl }) => {
                                 }
 
                                 </div>
-                                <div className="w-100 mx-auto text-center my-3"  onClick={() => OpenDivLink()}
-                                    style={{maxWidth: '240px', backgroundColor: 'white', borderRadius: '12px', padding: '12px 16px'}}>
+                                <div className="w-100 mx-auto text-center my-5"  onClick={() => OpenDivLink()}
+                                    style={{minWidth: '240px', maxWidth: '240px', height: '50px', backgroundColor: 'white', borderRadius: '12px', padding: '12px 16px'}}>
                                     Next
                                 </div>
                             </div>

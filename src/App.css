@@ -1,4 +1,39 @@
 
+      @font-face 
+      {
+        font-family: Poppins;
+        src: url('../public/fonts/Poppins-Regular.ttf');
+      }
+      @font-face 
+      {
+        font-family: Poppins Medium;
+        src: url('../public/fonts/Poppins-Medium.ttf');
+      }
+      @font-face 
+      {
+        font-family: Poppins Medium Italic;
+        src: url('../public/fonts/Poppins-MediumItalic.ttf');
+      }
+      @font-face 
+      {
+        font-family: Poppins SemiBold;
+        src: url('../public/fonts/Poppins-SemiBold.ttf');
+      }
+      @font-face 
+      {
+        font-family: Poppins Bold;
+        src: url('../public/fonts/Poppins-Bold.ttf');
+      }
+      @font-face 
+      {
+        font-family: Staatliches;
+        src: url('../public/fonts/Staatliches-Regular.ttf');
+      }
+      html *
+      {
+          font-family: Poppins;
+          font-style: normal;
+      }
 div.active img
 {
     border-radius: 8px;;
